@@ -1,6 +1,6 @@
 {
   "name": "@blockchain-lab-um/ssi-snap-connector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for using the SSI Snap on frontend",
   "keywords": [
     "MetaMask",
@@ -39,7 +39,8 @@
     "@veramo/core": "^3.1.6-next.146"
   },
   "files": [
-    "build, package.json"
+    "build",
+    "package.json"
   ],
   "devDependencies": {
     "@types/node": "^12.12.35",
