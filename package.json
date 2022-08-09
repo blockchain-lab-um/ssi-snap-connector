@@ -1,0 +1,50 @@
+{
+  "name": "@blockchain-lab-um/ssi-snap-connector",
+  "version": "1.0.0",
+  "description": "Library for using the SSI Snap on frontend",
+  "keywords": [
+    "MetaMask",
+    "Snaps",
+    "SSI",
+    "VC",
+    "Verifiable Credential",
+    "VP",
+    "Verifiable Presentation",
+    "DID:ETHR",
+    "Veramo"
+  ],
+  "license": "(Apache-2.0 AND MIT)",
+  "main": "./build/index.js",
+  "module": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn run build:lib && yarn run build:types",
+    "build:lib": "tsc --build tsconfig.json",
+    "build:types": "tsc --emitDeclarationOnly",
+    "lint": "yarn run lint:style && yarn run lint:types",
+    "lint:types": "tsc --noEmit --pretty",
+    "lint:style": "eslint --color .",
+    "lint:style:fix": "yarn run lint:style --fix"
+  },
+  "author": {
+    "name": "Blockchain Lab:UM",
+    "email": "blockchain-lab@um.si",
+    "url": "https://blockchain-lab.um.si"
+  },
+  "dependencies": {
+    "@blockchain-lab-um/ssi-snap-types": "1.0.2",
+    "@veramo/core": "^3.1.6-next.146"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.35",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^7.11.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "4.3.5"
+  }
+}
