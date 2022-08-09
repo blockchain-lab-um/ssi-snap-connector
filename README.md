@@ -6,6 +6,10 @@ For more details on SSI snap itself see [snap repo](https://github.com/blockchai
 
 ## Usage
 
+### Install
+
+`yarn add @blockchain-lab-um/ssi-snap-connector`
+
 Connector has exposed function for installing the Snap.
 
 ```typescript
