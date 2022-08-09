@@ -26,13 +26,16 @@ An example of initializing SSI snap and invoking snap API is shown below.
 
 ```typescript
 // install snap and fetch API
-const snap = await enableSSISnap({ version: "latest" });
+const snap = await enableSSISnap();
 const api = await snap.getSSISnapApi();
 
 // invoke API
 const vcs = await api.getVCs();
 
 console.log("list of VCs:", vcs);
+
+// for installing a specific version of the snap use
+const snap = await enableSSISnap('npm:@blockchain-lab-um/ssi-snap', { version: "latest" });
 ```
 
 ## Connector methods:
