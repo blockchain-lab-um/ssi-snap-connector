@@ -9,7 +9,7 @@ async function sendSnapMethod<T>(
   request: MetaMaskSSISnapRPCRequest,
   snapId: string
 ): Promise<T> {
-  console.log("REquest:", request);
+  console.log("Request:", request);
   return await window.ethereum.request({
     method: snapId,
     params: [request],
@@ -70,6 +70,34 @@ export async function saveVC(
       method: "saveVC",
       params: { verifiableCredential: verifiableCredential },
     },
+    this.snapId
+  );
+}
+
+export async function getDID(this: MetaMaskSSISnap): Promise<string> {
+  return await sendSnapMethod({ method: "getDID" }, this.snapId);
+}
+
+export async function getMethod(this: MetaMaskSSISnap): Promise<string> {
+  return await sendSnapMethod({ method: "getMethod" }, this.snapId);
+}
+
+export async function getAvailableMethods(
+  this: MetaMaskSSISnap
+): Promise<string[]> {
+  return await sendSnapMethod({ method: "getAvailableMethods" }, this.snapId);
+}
+
+export async function init(this: MetaMaskSSISnap): Promise<boolean> {
+  return await sendSnapMethod({ method: "init" }, this.snapId);
+}
+
+export async function switchMethod(
+  this: MetaMaskSSISnap,
+  didMethod: string
+): Promise<boolean> {
+  return await sendSnapMethod(
+    { method: "switchMethod", params: { didMethod: didMethod } },
     this.snapId
   );
 }

@@ -13,25 +13,33 @@ export {
   isSnapInstalled,
 } from "./utils";
 
-export type SnapInstallationParamNames = "version" | string;
+const availableMethods = ["did:ethr", "did:key"] as const;
+
+export type SnapInstallationParams = {
+  snapId?: string;
+  version?: string;
+  supportedMethods?: Array<typeof availableMethods[number]>;
+};
 
 /**
- * Install and enable Filecoin snap
+ * Install and enable SSI Snap
  *
  * Checks for existence of Metamask and version compatibility with snaps before installation.
  *
- * Provided snap configuration must define at least network property so predefined configuration can be selected.
- * All other properties are optional, and if present will overwrite predefined property.
  *
- * @param snapOrigin
+ * @param snapInstallationParams - set snapID, version and a list of supported methods
  *
- * @return MetamaskFilecoinSnap - adapter object that exposes snap API
+ *
+ * @return MetaMaskSSISnap - adapter object that exposes snap API
  */
 export async function enableSSISnap(
-  snapOrigin?: string,
-  snapInstallationParams: Record<SnapInstallationParamNames, unknown> = {}
+  snapInstallationParams: SnapInstallationParams = {}
 ): Promise<MetaMaskSSISnap> {
-  const snapId = snapOrigin ?? defaultSnapOrigin;
+  const {
+    snapId = defaultSnapOrigin,
+    version = "latest",
+    supportedMethods = ["did:ethr"],
+  } = snapInstallationParams;
 
   // check all conditions
   if (!hasMetaMask()) {
@@ -49,7 +57,7 @@ export async function enableSSISnap(
       params: [
         {
           [`wallet_snap_${snapId}`]: {
-            ...snapInstallationParams,
+            version: version,
           },
         },
       ],
@@ -57,7 +65,17 @@ export async function enableSSISnap(
   }
 
   // create snap describer
-  const snap = new MetaMaskSSISnap(snapOrigin || defaultSnapOrigin);
+  const snap = new MetaMaskSSISnap(snapId, supportedMethods);
+
+  // initialize snap
+  // const snapApi = await snap.getSSISnapApi();
+  // await snapApi.init();
+
+  // const method = await snapApi.getMethod();
+  // if (!snap.supportedMethods.includes(method)) {
+  //   console.log("Switching method...", method, snap.supportedMethods[0]);
+  //   await snapApi.switchMethod(snap.supportedMethods[0]);
+  // }
 
   // return snap object
   return snap;
