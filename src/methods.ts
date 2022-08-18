@@ -1,7 +1,7 @@
 import { VerifiableCredential, VerifiablePresentation } from "@veramo/core";
 import {
   MetaMaskSSISnapRPCRequest,
-  VCQuerry,
+  VCQuery,
 } from "@blockchain-lab-um/ssi-snap-types";
 import { MetaMaskSSISnap } from "./snap";
 
@@ -19,16 +19,16 @@ async function sendSnapMethod<T>(
 /**
  * Get a list of VCs stored in the SSI Snap under currently selected MetaMask account
  *
- * @param {VCQuerry} querry - Querry for filtering through all VCs
+ * @param {VCQuery} query - Query for filtering through all VCs
  * @return {Promise<Array<VerifiableCredential>>} list of VCs
  */
 export async function getVCs(
   this: MetaMaskSSISnap,
-  querry?: VCQuerry
+  query?: VCQuery
 ): Promise<VerifiableCredential[]> {
-  if (!querry) querry = {};
+  if (!query) query = {};
   return await sendSnapMethod(
-    { method: "getVCs", params: { querry: querry } },
+    { method: "getVCs", params: { query: query } },
     this.snapId
   );
 }

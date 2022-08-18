@@ -67,15 +67,15 @@ export async function enableSSISnap(
   // create snap describer
   const snap = new MetaMaskSSISnap(snapId, supportedMethods);
 
-  // initialize snap
-  // const snapApi = await snap.getSSISnapApi();
-  // await snapApi.init();
+  //initialize snap
+  const snapApi = await snap.getSSISnapApi();
+  await snapApi.init();
 
-  // const method = await snapApi.getMethod();
-  // if (!snap.supportedMethods.includes(method)) {
-  //   console.log("Switching method...", method, snap.supportedMethods[0]);
-  //   await snapApi.switchMethod(snap.supportedMethods[0]);
-  // }
+  const method = await snapApi.getMethod();
+  if (!snap.supportedMethods.includes(method)) {
+    console.log("Switching method...", method, snap.supportedMethods[0]);
+    await snapApi.switchMethod(snap.supportedMethods[0]);
+  }
 
   // return snap object
   return snap;
