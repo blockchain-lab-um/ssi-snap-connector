@@ -10,6 +10,9 @@ import {
   getMethod,
   getAvailableMethods,
   switchMethod,
+  getVCStore,
+  getAvailableVCStores,
+  setVCStore,
 } from "./methods";
 
 export class MetaMaskSSISnap {
@@ -45,6 +48,9 @@ export class MetaMaskSSISnap {
       getMethod: getMethod.bind(this),
       getAvailableMethods: getAvailableMethods.bind(this),
       switchMethod: switchMethod.bind(this),
+      getVCStore: getVCStore.bind(this),
+      setVCStore: setVCStore.bind(this),
+      getAvailableVCStores: getAvailableVCStores.bind(this),
     };
   };
 }

@@ -125,3 +125,23 @@ export async function changeInfuraToken(
     this.snapId
   );
 }
+
+export async function getVCStore(this: MetaMaskSSISnap): Promise<string> {
+  return await sendSnapMethod({ method: "getVCStore" }, this.snapId);
+}
+
+export async function getAvailableVCStores(
+  this: MetaMaskSSISnap
+): Promise<string[]> {
+  return await sendSnapMethod({ method: "getAvailableVCStores" }, this.snapId);
+}
+
+export async function setVCStore(
+  this: MetaMaskSSISnap,
+  vcStore: string
+): Promise<boolean> {
+  return await sendSnapMethod(
+    { method: "setVCStore", params: { vcStore: vcStore } },
+    this.snapId
+  );
+}

@@ -44,7 +44,7 @@ const snap = await enableSSISnap('npm:@blockchain-lab-um/ssi-snap', { version: "
 /**
  * Get a list of VCs stored in the SSI Snap under currently selected MetaMask account
  *
- * @param {VCQuerry} querry - Querry for filtering through all VCs
+ * @param {VCQuery} query - Query for filtering through all VCs
  * @return {Promise<Array<VerifiableCredential>>} list of VCs
  */
 const vcs = await api.getVCs({ issuer: "did:0x04:0x123..." });
