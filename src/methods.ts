@@ -88,10 +88,6 @@ export async function getAvailableMethods(
   return await sendSnapMethod({ method: "getAvailableMethods" }, this.snapId);
 }
 
-export async function init(this: MetaMaskSSISnap): Promise<boolean> {
-  return await sendSnapMethod({ method: "init" }, this.snapId);
-}
-
 export async function switchMethod(
   this: MetaMaskSSISnap,
   didMethod: string

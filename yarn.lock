@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@blockchain-lab-um/ssi-snap-types@1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@blockchain-lab-um/ssi-snap-types/-/ssi-snap-types-1.0.9.tgz#9aafb61dc6cd0b50ca80da669192f977902dfae9"
-  integrity sha512-QG4DEgKq5yKI+biwIMG5p1rsikTELMxnrqq4a/kzs5Shx85tAjwsNrc3gwzZv1kh4cEUN62IhkBBHRjQ8XDGQQ==
+"@blockchain-lab-um/ssi-snap-types@1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@blockchain-lab-um/ssi-snap-types/-/ssi-snap-types-1.0.10.tgz#f814df29882cc6c88b8a02c74cd0990f0c60cc65"
+  integrity sha512-3cz1e307CugdPAZNoTN156DLWLvSkTKtXwJX4C1ry2zeqWcq1YtWAd0GT/nfjmc1ouYDk1hjOrr9L2lycregSg==
   dependencies:
     "@veramo/core" "^3.1.6-next.146"
 
@@ -316,6 +316,16 @@
     events "^3.2.0"
     z-schema "^5.0.2"
 
+"@veramo/core@^4.0.2-next.9":
+  version "4.0.2-next.9"
+  resolved "https://registry.yarnpkg.com/@veramo/core/-/core-4.0.2-next.9.tgz#b77aef4089895250f7fb9ed0afb5e5f8e1b6be11"
+  integrity sha512-Rp0gG0u58eT9giHJ+NU81nBac6ouNLQHxML8kcbNUVQeo2sBfgHqohNtEnUwQh0aN/i19XqVDPxE0AuWYeGd1Q==
+  dependencies:
+    debug "^4.3.3"
+    did-jwt-vc "^3.1.0"
+    events "^3.2.0"
+    z-schema "^5.0.2"
+
 acorn-jsx@^5.3.1:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
@@ -512,10 +522,36 @@ did-jwt-vc@^2.1.13:
     did-jwt "^6.2.2"
     did-resolver "^4.0.0"
 
+did-jwt-vc@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/did-jwt-vc/-/did-jwt-vc-3.1.0.tgz#aa7877c4c1f26ba11883604ac0ece30ca4fe78a4"
+  integrity sha512-8N54No9RQpbDM4a/aMiGc/tZWubtH8bqi7DLnO6B62AdWaNVKeS9ddcuANztSS1yTuypyzlyeeEtCTqEzpYgjA==
+  dependencies:
+    did-jwt "^6.6.0"
+    did-resolver "^4.0.0"
+
 did-jwt@^6.2.2:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/did-jwt/-/did-jwt-6.3.0.tgz#6c7380a69fff97f95101ce03519fd34c0ee43594"
   integrity sha512-kvwCDY6KZJZn9/LK+X4Co+X1brnZWr6fnP1NRVReTgSPFyA+20oZ+VCsmSnzzYUoPkQ/Pl54uOMlmRw69z5zBg==
+  dependencies:
+    "@stablelib/ed25519" "^1.0.2"
+    "@stablelib/random" "^1.0.1"
+    "@stablelib/sha256" "^1.0.1"
+    "@stablelib/x25519" "^1.0.2"
+    "@stablelib/xchacha20poly1305" "^1.0.1"
+    bech32 "^2.0.0"
+    canonicalize "^1.0.8"
+    did-resolver "^4.0.0"
+    elliptic "^6.5.4"
+    js-sha3 "^0.8.0"
+    multiformats "^9.6.5"
+    uint8arrays "^3.0.0"
+
+did-jwt@^6.6.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/did-jwt/-/did-jwt-6.8.0.tgz#0594e740565efd7ec7de980da4f6e52a5448d8a0"
+  integrity sha512-0TZEWy7CTrMYqZ8WKWmxlOjLHpUkhgM+lykL+ALuTLqaw2XkRTMzt9lrdKwgwiWA8WD1k5zm7/B6bYtpx4Lvdg==
   dependencies:
     "@stablelib/ed25519" "^1.0.2"
     "@stablelib/random" "^1.0.1"

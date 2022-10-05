@@ -5,7 +5,6 @@ import {
   getVP,
   togglePopups,
   changeInfuraToken,
-  init,
   getDID,
   getMethod,
   getAvailableMethods,
@@ -29,10 +28,8 @@ export class MetaMaskSSISnap {
     window.ethereum.on("accountsChanged", this.accountChanged);
   }
 
-  public accountChanged = async (accounts: string[]) => {
+  public accountChanged = (accounts: string[]) => {
     console.log("Account changed", accounts[0]);
-    const api = await this.getSSISnapApi();
-    await api.init();
   };
 
   // eslint-disable-next-line @typescript-eslint/require-await
@@ -43,7 +40,6 @@ export class MetaMaskSSISnap {
       getVP: getVP.bind(this),
       togglePopups: togglePopups.bind(this),
       changeInfuraToken: changeInfuraToken.bind(this),
-      init: init.bind(this),
       getDID: getDID.bind(this),
       getMethod: getMethod.bind(this),
       getAvailableMethods: getAvailableMethods.bind(this),

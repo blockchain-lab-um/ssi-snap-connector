@@ -69,7 +69,6 @@ export async function enableSSISnap(
 
   //initialize snap
   const snapApi = await snap.getSSISnapApi();
-  await snapApi.init();
 
   const method = await snapApi.getMethod();
   if (!snap.supportedMethods.includes(method)) {
