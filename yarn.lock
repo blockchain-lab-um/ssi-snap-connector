@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@blockchain-lab-um/ssi-snap-types@1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@blockchain-lab-um/ssi-snap-types/-/ssi-snap-types-1.0.10.tgz#f814df29882cc6c88b8a02c74cd0990f0c60cc65"
-  integrity sha512-3cz1e307CugdPAZNoTN156DLWLvSkTKtXwJX4C1ry2zeqWcq1YtWAd0GT/nfjmc1ouYDk1hjOrr9L2lycregSg==
+"@blockchain-lab-um/ssi-snap-types@1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@blockchain-lab-um/ssi-snap-types/-/ssi-snap-types-1.0.11.tgz#af25a8f4cb60cd58cef7325c21083d9e8042d675"
+  integrity sha512-duVVzemitpQF7p3lR8OhRBuQeYW7lQ1UlljaEo0GgpZwA1du25WHLcztJ5sJKt72dASLyr/3EAHstG9yhCOTrg==
   dependencies:
     "@veramo/core" "^3.1.6-next.146"
 

@@ -42,14 +42,14 @@ export async function getVCs(
  */
 export async function getVP(
   this: MetaMaskSSISnap,
-  vc_id: string,
+  vcId: string,
   challenge?: string,
   domain?: string
 ): Promise<VerifiablePresentation> {
   return await sendSnapMethod(
     {
       method: "getVP",
-      params: { vc_id: vc_id, challenge: challenge, domain: domain },
+      params: { vcId: vcId, challenge: challenge, domain: domain },
     },
     this.snapId
   );
